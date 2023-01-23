@@ -7,12 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simple Carousel</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .img-slider .slide{
+      clip-path: circle(0% at 0 50%);
+    }
+    .img-slider .slide.active{
+      clip-path: circle(150% at 0 50%);
+      transition: 2s;
+      transition-property: clip-path;
+    }
+    .img-slider .navigation .btn.active{
+      background-color: rgb(194, 181, 3);
+    }
+  </style>
 </head>
 
 <body class="h-[100vh] flex justify-center items-center bg-black">
   <!-- Carousel Container Started -->
-    <section class="img-slider relative w-[800px] h-[500px] m-3 bg-black">
-      <div class="slide z-[1] absolute w-[100%]">
+    <section class="img-slider relative w-[400px] h-[300px] md:w-[800px] md:h-[500px] lg:w-[1000px] lg:h-[700px] m-3 bg-black">
+      <div class="slide active z-[1] absolute w-[100%]">
         <img class="z-[1] w-[100%] rounded-md" src="assets/img-1.jpg" alt="">
       </div>
       <div class="slide z-[1] absolute w-[100%]">
@@ -30,8 +43,8 @@
       <div class="slide z-[1] absolute w-[100%]">
         <img class="z-[1] w-[100%] rounded-md" src="assets/img-6.jpg" alt="">
       </div>
-      <div class="navigation z-[2] absolute flex bottom-7 left-2/4 translate-x-[-50%]">
-        <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
+      <div class="navigation z-[2] absolute flex lg:bottom-[50px] md:bottom-0 sm:bottom-[40px] bottom-[65px] left-2/4 translate-x-[-50%]">
+        <div class="btn active bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
         <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
         <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
         <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
@@ -41,7 +54,7 @@
     </section>
   <!-- Carousel Container Ended -->
 
-  <script type="module" src="/main.js"></script>
+  <script src="/main.js"></script>
 </body>
 
 </html>

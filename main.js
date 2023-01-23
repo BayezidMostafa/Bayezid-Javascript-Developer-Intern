@@ -1,9 +1,11 @@
 const slides = document.querySelectorAll('.slide');
+const slide = document.querySelector('.slide');
 const button = document.querySelectorAll('.btn');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 let currentSlide = 1;
 
+// Bottom Navigation
 
 const manualNavigation = (manual) => {
     slides.forEach(slide => {
@@ -15,6 +17,7 @@ const manualNavigation = (manual) => {
     slides[manual].classList.add('active')
     button[manual].classList.add('active')
 }
+
 
 button.forEach((btn, index) => {
     btn.addEventListener('click', () => {
@@ -28,8 +31,50 @@ button.forEach((btn, index) => {
 
 const repeat = () => {
     const active = document.getElementsByClassName('active');
-    let i = 1;
-    console.log(i);
+
+    let i = 0;
+
+    // Side Navigation
+
+    next.addEventListener('click', () => {
+
+        [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+        });
+
+        i++
+        if (slides.length == i) {
+            i = 0;
+        }
+
+        slides[i].classList.add('active');
+        button[i].classList.add('active');
+
+        if (i >= slides.length) {
+            return;
+        }
+
+    });
+
+    prev.addEventListener('click', () => {
+
+        [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+        });
+
+        if (i == 0) {
+            i = slides.length;
+        }
+
+        i--;
+
+        button[i].classList.add('active');
+        slides[i].classList.add('active');
+
+    })
+
+    // Automatic Transition
+
     const repeater = () => {
         setTimeout(() => {
 
@@ -37,55 +82,20 @@ const repeat = () => {
                 activeSlide.classList.remove('active');
             });
 
-            slides[i].classList.add('active');
-            button[i].classList.add('active');
             i++;
-
             if (slides.length == i) {
                 i = 0;
             }
+            slides[i].classList.add('active');
+            button[i].classList.add('active');
+
             if (i >= slides.length) {
                 return;
             }
+
             repeater();
-        }, 50000);
-        next.addEventListener('click', () => {
 
-            [...active].forEach((activeSlide) => {
-                activeSlide.classList.remove('active');
-            });
-
-            slides[i].classList.add('active');
-            button[i].classList.add('active');
-            console.log(i);
-            i++
-            if (slides.length == i) {
-                i = 0;
-            }
-            if (i >= slides.length) {
-                return;
-            }
-            console.log('After Slide', i);
-        })
-        prev.addEventListener('click', () => {
-            
-            [...active].forEach((activeSlide) => {
-                activeSlide.classList.remove('active');
-            });
-            if(i != 1){
-                i--;
-            }
-            button[i].classList.add('active');
-            slides[i].classList.add('active');
-            if (i == 1) {
-                i = slides.length;
-                console.log('after length', i);
-            }
-
-            console.log('Before Slide', i);
-
-        })
-
+        }, 10000);
     }
     repeater();
 }

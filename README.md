@@ -5,6 +5,8 @@
   </br>
   ⦿ CSS
   </br>
+  ⦿ Tailwind CSS
+  </br>
   ⦿ JavaScript
   </br>
   ⦿ Vite

@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <section class="">
-      
-    </section>
 
-    <script type="module" src="/main.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Carousel</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="h-[100vh] flex justify-center items-center bg-black">
+  <!-- Carousel Container Started -->
+    <section class="img-slider relative w-[800px] h-[500px] m-3 bg-black">
+      <div class="slide z-[1] absolute w-[100%]">
+        <img class="z-[1] w-[100%] rounded-md" src="assets/img-1.jpg" alt="">
+      </div>
+      <div class="slide z-[1] absolute w-[100%]">
+        <img class="z-[1] w-[100%] rounded-md" src="assets/img-2.jpg" alt="">
+      </div>
+      <div class="slide z-[1] absolute w-[100%]">
+        <img class="z-[1] w-[100%] rounded-md" src="assets/img-3.jpg" alt="">
+      </div>
+      <div class="slide z-[1] absolute w-[100%]">
+        <img class="z-[1] w-[100%] rounded-md" src="assets/img-4.jpg" alt="">
+      </div>
+      <div class="slide z-[1] absolute w-[100%]">
+        <img class="z-[1] w-[100%] rounded-md" src="assets/img-5.jpg" alt="">
+      </div>
+      <div class="slide z-[1] absolute w-[100%]">
+        <img class="z-[1] w-[100%] rounded-md" src="assets/img-6.jpg" alt="">
+      </div>
+      <div class="navigation z-[2] absolute flex bottom-7 left-2/4 translate-x-[-50%]">
+        <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
+        <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
+        <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
+        <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
+        <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
+        <div class="btn bg-white w-3 h-3 m-2 rounded-full cursor-pointer"></div>
+      </div>
+    </section>
+  <!-- Carousel Container Ended -->
+
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
